@@ -5,7 +5,7 @@ ap.dom.prototype = {
         if (className != null && className != undefined) dom.className = className;
         if (text != null && text != undefined) {
             dom.textContent = dom.innerText = text;
-            if (dom.value != undefined) dom.value = text;
+            //if (dom.value != undefined) dom.value = text;
         }
         if (appendTo != null && appendTo != undefined) appendTo.appendChild(dom);
         return dom;
