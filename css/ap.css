@@ -1,0 +1,29 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+.ap-tabSet {
+    width: 20%;
+    float: left;
+}
+
+    .ap-tabSet .tab {
+        border: 1px solid #c0c0c0;
+        cursor: pointer;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: 5px 20px;
+        font-size: 12px;
+        font-family: Arial;
+    }
+
+    .ap-tabSet .focus {
+        border-color: #2a9fcd;
+        background-color: #E7EBFF;
+        font-weight: bold;
+    }
