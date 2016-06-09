@@ -53,22 +53,25 @@ ap.prototype = {
 var app = new ap();
 app.load([
     'js/ap/ap.loader.js',
-    'js/ap/ap.dom.js',
-    'js/ap/ap.tabSet.js',
-    'js/ap/ap.main.js',
-    'js/ap/ap.head.js',
-    'js/ap/ap.dataAnalysisController.js',
-    'js/ap/ap.todayWeatherController.js'
+    'js/ap/ap.dom.js'
 ], function () {
-    var main = new ap.main();
-    var content1 = new ap.dataAnalysisController();
-    var content2 = new ap.todayWeatherController();
-    var tabSet = new ap.tabSet({ target: main.getDom() });
-    tabSet.load([
-        { text: 'Data Analysis', content: content1.getDom() },
-        { text: 'Today\'s Weather', content: content2.getDom() }
-    ]);
-    tabSet.render(app.getDom());
-    main.render(app.getDom());
-    app.render(document.body);
+    app.load([
+        'js/ap/ap.tabSet.js',
+        'js/ap/ap.main.js',
+        'js/ap/ap.head.js',
+        'js/ap/ap.dataAnalysisController.js',
+        'js/ap/ap.todayWeatherController.js'
+    ], function () {
+        var main = new ap.main();
+        var content1 = new ap.dataAnalysisController();
+        var content2 = new ap.todayWeatherController();
+        var tabSet = new ap.tabSet({ target: main.getDom() });
+        tabSet.load([
+            { text: 'Data Analysis', content: content1.getDom() },
+            { text: 'Today\'s Weather', content: content2.getDom() }
+        ]);
+        tabSet.render(app.getDom());
+        main.render(app.getDom());
+        app.render(document.body);
+    });
 });
