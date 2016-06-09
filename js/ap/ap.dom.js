@@ -4,7 +4,8 @@ ap.dom.prototype = {
         var dom = document.createElement(type);
         if (className != null && className != undefined) dom.className = className;
         if (text != null && text != undefined) {
-            dom.textContent = dom.innerText = text;
+            if (dom.textContent != undefined) dom.textContent = text;
+            if (dom.innerText != undefined) dom.innerText = text;
             if (dom.value != undefined) dom.value = text;
         }
         if (appendTo != null && appendTo != undefined) appendTo.appendChild(dom);
